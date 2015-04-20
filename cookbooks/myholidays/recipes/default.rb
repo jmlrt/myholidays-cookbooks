@@ -5,3 +5,4 @@
 # Copyright (c) 2015 JMLRT, All Rights Reserved.
 
 include_recipe 'apt::default'
+include_recipe 'myholidays::webapp'
