@@ -6,3 +6,4 @@
 
 include_recipe 'apt::default'
 include_recipe 'myholidays::webapp'
+include_recipe 'myholidays::proxy'
