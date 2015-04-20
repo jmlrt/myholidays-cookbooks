@@ -12,7 +12,7 @@ service 'tomcat6' do
 				action [ :enable, :start ]
 end
 
-remote_file '/var/lib/tomcat6/webapps/sample.war' do
-				source "https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war"
+remote_file "#{node['tomcat']['webapp_dir']}/myholidays.war" do
+				source "#{node['webapp']['source']}"
 				notifies :restart, 'service[tomcat6]'
 end

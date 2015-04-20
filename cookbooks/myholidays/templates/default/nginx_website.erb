@@ -10,3 +10,19 @@ server {
         proxy_pass http://localhost:8080;
     }
 }
+server {
+    listen 443 ssl;
+    server_name <%= node['nginx']['website'] %>;
+
+		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+		ssl_certificate <%= node['nginx']['dir'] %>/ssl/<%= node['nginx']['certfile'] %>;
+		ssl_certificate_key <%= node['nginx']['dir'] %>/ssl/<%= node['nginx']['keyfile'] %>;
+
+    location / {
+        # Proxy for local tomcat
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:8080;
+    }
+}
