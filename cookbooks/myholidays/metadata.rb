@@ -1,0 +1,12 @@
+name             'myholidays'
+maintainer       'JMLRT'
+maintainer_email 'jmlrt-git@mailleret.fr'
+license          'all_rights'
+description      'Installs/Configures myholidays'
+long_description 'Installs/Configures myholidays'
+version          '0.1.0'
+
+depends 'apt', '~> 2.7.0'
+depends 'nginx', '~> 2.7.6'
+depends 'tomcat', '~> 0.17.3'
+depends 'firewall', '~> 1.0.2'
